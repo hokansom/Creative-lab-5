@@ -2,21 +2,38 @@ body {
     background-color: gray;
 }
 
+.centered {
+    margin: auto;
+    width: 10%;
+}
+
 #center-div {
     background-color: white;
+    border-left: groove darkgray 3px;
+    border-right: groove darkgray 3px;
 }
 
 .inventory {
     display: flex;
-    border: 1px solid red;
+    flex-wrap: wrap;
+    padding: 10px;
+    justify-content: center;
 }
 
 .inventory-item {
-    padding: 15px;
+    height: 235px;
+    width: 200px;
     text-align: center;
     display: flex;
     flex-direction: column;
-    border: 1px solid blue;
+    border: 2px solid black;
+    flex: 1;
+    margin: 4px;
+    padding: 2px;
+}
+
+.inventory-item:hover {
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .left-span {
@@ -28,18 +45,30 @@ body {
     background-color: white;
     margin-top: 1vw;
     margin-bottom: 1vw;
+    border: groove darkgray 3px;
 }
 
 #log-sidebar h4 {
-    background-color: red;
+    background-color: #007bff;
     color: white;
     text-align: left;
     padding: 3px;
     padding-left: 6px;
 }
 
+#log-sidebar-text {
+    padding: 3px;
+}
+
 #main-content {
     background-color: lightgray;
+    border-left: groove darkgray 3px;
+    border-right: groove darkgray 3px;
+    border-bottom: groove darkgray 3px;
+}
+
+#pet-div {
+    border: groove darkgray 3px;
 }
 
 #pet-div img {
@@ -51,15 +80,24 @@ body {
     width: 60%;
 }
 
+#pet-name-bar {
+    background-color: #007bff;
+    color: white;
+    text-align: left;
+    padding: 3px;
+    padding-left: 6px;
+}
+
 #pet-sidebar {
     text-align: center;
     background-color: white;
     margin-top: 1vw;
     margin-bottom: 1vw;
+    border: groove darkgray 3px;
 }
 
 #pet-sidebar h4 {
-    background-color: red;
+    background-color: #007bff;
     color: white;
     text-align: left;
     padding: 3px;
@@ -69,6 +107,16 @@ body {
 #pet-sidebar img {
     width: 60%;
     border: black solid 1px;
+}
+
+.shop-image {
+    width: 30%;
+    margin-left: 35%;
+}
+
+#sprite-div {
+    border: groove darkgray 3px;
+    margin: 20px;
 }
 
 td {

@@ -63,17 +63,14 @@
             <!-- blank space -->
             <div class="col"></div>
             <!-- main center div -->
-            <div id="main-content" class="col-12 border border-primary">
+            <div id="main-content" class="col-12">
 
 
                 <div class="row">
                     <!-- Pet Info Sidebar -->
                     <div class="col">
-                        <div id="pet-sidebar" class="border border-danger">
-
-                        </div>
                         <!-- center panel -->
-                        <div class="col-md-8 border border-warning">
+                        <div class="col-md-8">
                             <h2>Register</h2>
                             <form ng-submit="register()">
                                 <div class="input">
@@ -89,15 +86,14 @@
                                     <label for="species">Enter your pet's species:</label>
                                     <input type="text" ng-model="user-species" id="species" name="species">
                                 </div>-->
-                                <input id="registerButton" type="submit" value="Register"/>
+                                <input id="registerButton" class="btn btn-primary" type="submit" value="Register"/>
                             </form>
+                            <br>
+                            <a class="btn btn-secondary" href="/">Return to login screen</a>
+                            <br><br>
                         </div>
-                        <a href="/">Return to login screen</a>
                         <!-- right log div -->
-                        <div class="col border border-danger">
-                            <div id="log-sidebar" class="border border-danger">
-
-                            </div>
+                        <div class="col">
                         </div>
                     </div>
 

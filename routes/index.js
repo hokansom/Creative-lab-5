@@ -118,6 +118,13 @@ router.put('/tamagotchi/:tamagotchi/walk', function(req, res, next) {
   });
 });
 
+router.put('/tamagotchi/:tamagotchi/bathe', function(req, res, next) {
+  req.tamagotchi.bathe(function(err, tamagotchi){
+    if (err) { return next(err); }
+    res.json(tamagotchi);
+  });
+});
+
 router.put('/tamagotchi/:tamagotchi/read', function(req, res, next) {
   req.tamagotchi.read(function(err, tamagotchi){
     if (err) { return next(err); }
@@ -139,18 +146,44 @@ router.put('/tamagotchi/:tamagotchi/tickle', function(req, res, next) {
   });
 });
 
-router.put('/tamagotchi/:tamagotchi/buy', function(req, res, next) {
-  req.tamagotchi.buy(function(err, tamagotchi){
+router.put('/tamagotchi/:tamagotchi/play', function(req, res, next) {
+  req.tamagotchi.play(function(err, tamagotchi){
     if (err) { return next(err); }
     res.json(tamagotchi);
   });
 });
+
+router.put('/tamagotchi/:tamagotchi/buy/:buy', function(req, res, next) {
+  console.log(req.params.buy);
+  req.tamagotchi.buy(req.params.buy, function(err, tamagotchi){
+    if (err) { return next(err); }
+    res.json(tamagotchi);
+  });
+});
+
+router.put('/tamagotchi/:tamagotchi/consume/:consume', function(req, res, next) {
+  console.log(req.params.consume);
+  req.tamagotchi.consume(req.params.consume, function(err, tamagotchi){
+    if (err) { return next(err); }
+    res.json(tamagotchi);
+  });
+});
+
 
 router.put('/tamagotchi/:tamagotchi/increaseSpeed', function(req, res, next) {
     console.log("Increasing Speed...");
   req.tamagotchi.increaseSpeed(function(err, tamagotchi){
     if (err) { return next(err); }
     res.json(tamagotchi);
+  });
+});
+
+router.put('/tamagotchi/:tamagotchi/updateInventory', function(req, res, next) {
+    console.log("Update inventory");
+    petSchema.findOneAndUpdate({ username: req.query.username }, req.new, {upsert:true}, function(err, tamagotchi){
+    if (err) return res.send(500, { error: err });
+    res.json(tamagotchi);
+    return res.send("succesfully saved");
   });
 });
 

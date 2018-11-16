@@ -29,105 +29,46 @@
 
     <!-- My JavaScript -->
     <script src="javascripts/novapets.js"></script>
-    <script src="javascripts/inventory.js"></script>
+    <!--<script src="javascripts/inventory.js"></script>-->
 </head>
 
-<body ng-app='app' ng-controller='inventoryCtrl'>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <a class="navbar-brand" href="#">Novapets</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav mr-auto">
-                <li class="nav-item active">
-                    <a class="nav-link" href="pet.html">Pet</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Inventory<span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="shop.html">Shop</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="account.html">Account</a>
-                </li>
-            </ul>
-        </div>
-    </nav>
+<body ng-app='app' ng-controller='mainCtrl'>
+    <nav-bar></nav-bar>
 
     <div class="container">
         <div class="row">
             <!-- blank space -->
             <div class="col"></div>
             <!-- main center div -->
-            <div id="main-content" class="col-12 border border-primary">
+            <div id="main-content" class="col-12">
 
 
                 <div class="row">
                     <!-- Pet Info Sidebar -->
-                    <div class="col" ng-controller='mainCtrl'>
+                    <div class="col">
                         <pet-bar></pet-bar>
-                        <div id="pet-sidebar" class="border border-danger">
-                            <h4><strong>James</strong></h4>
-                            <img src="images/kuchipatchi.png" alt="your Kuchipatchi pet">
-                            <br>
-                            <hr>
-                            <table style="width:100%">
-                                <tr>
-                                    <td>Species: </td>
-                                    <th>Kupatchi</th>
-                                </tr>
-                                <tr>
-                                    <td>Health: </td>
-                                    <th>15 / 15</th>
-                                </tr>
-                                <tr>
-                                    <td>Mood: </td>
-                                    <th>content</th>
-                                </tr>
-                                <tr>
-                                    <td>Hunger: </td>
-                                    <th>satiated</th>
-                                </tr>
-                                <tr>
-                                    <td>Age: </td>
-                                    <th>3 days</th>
-                                </tr>
-                                <tr>
-                                    <td>Level: </td>
-                                    <th>1</th>
-                                </tr>
-                            </table>
-                            <br>
-                        </div>
                     </div>
                     <!-- center panel -->
-                    <div id="center-div" class="col-md-8 border border-warning">
+                    <div id="center-div" class="col-md-8">
                         <h2>Inventory</h2>
-                        <div ng-repeat="item in inventory" class="inventory">
-                            <div class="inventory-item">
-                                <span><img src="{{item.url}}" alt="Food item"/></span>
-                                <span class=""><strong>Item:</strong></span>
-                                <span>{{item.name}}</span>
-                                <span><strong>Hunger Replenished:</strong></span>
-                                <span>{{item.hungerRefill}}</span>
-                                <button>Feed your pet!</button>
+                        <div class="inventory">
+                            <div ng-repeat="item in inventory">
+                                <div class="inventory-item">
+                                    <span><img ng-src="{{item.url}}" alt="Food item"/></span>
+                                    <span class=""><strong>Item:</strong></span>
+                                    <span>{{item.name}}</span>
+                                    <span><strong>Hunger Replenished:</strong></span>
+                                    <span>{{item.hungerRefill}}</span>
+                                    <button ng-click="feedItem(item, myobj)">Feed your pet!</button>
+                                </div>
                             </div>
                         </div>
                     </div>
                     <!-- right log div -->
-                    <div class="col border border-danger">
-                        <div id="log-sidebar" class="border border-danger">
-                            <h4><strong>Log</strong></h4>
-                            James ate a hamburger
-                            <br>James mood has fallen to discontent
-                            <br>James is now 3 days old
-                            <br>James found an item!
-                        </div>
+                    <div class="col">
+                        <instructions></instructions>
                     </div>
                 </div>
-
             </div>
             <!-- right blank space -->
             <div class="col"></div>

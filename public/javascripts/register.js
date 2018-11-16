@@ -27,11 +27,11 @@
                         data: myObj,
                         contentType: "application/json; charset=utf-8",
                         failure: function(jqXHR, status, err) {
-                            console.log("failed");
+                            //console.log("failed");
                             //alert("Username is available");
                         },
                         success: function(data, status, jqXHR) {
-                            console.log("success");
+                            //console.log("success");
                             console.log(data);
                             if (data != 0) {
                                 alert("That username is already taken. Please choose a different username");

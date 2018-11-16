@@ -39,24 +39,25 @@
             <!-- blank space on left -->
             <div class="col"></div>
             <!-- main center div -->
-            <div id="main-content" class="col-12 border border-primary">
+            <div id="main-content" class="col-12">
                 <div class="row">
                     <!-- Pet Info Sidebar -->
                     <div class="col">
                         <pet-bar></pet-bar>
                     </div>
                     <!-- Center Panel a.k.a. the MAIN CONTENT OF THE PAGE -->
-                    <div id="center-div" class="col-md-8 border border-warning">
-                        <h2>Your Actual Pet</h2>
-                        <div id="pet-div" class="border border-primary">
+                    <div id="center-div" class="col-md-8">
+                        <h2>Your Pet</h2>
+                        <div id="pet-div">
                             <div class="row">
                                 <div class="col">
-                                    <h4 style="background-color:red;">{{myobj.petName}}</h4>
+                                    <h4 id="pet-name-bar">{{myobj.petName}}</h4>
                                 </div>
                             </div>
                             <div class="row">
                                 <!-- stats panel -->
                                 <div class="col">
+                                    <br>
                                     <table style="width:100%">
                                         <tr>
                                             <td>Species: </td>
@@ -78,14 +79,6 @@
                                             <td>Hygiene: </td>
                                             <th>{{hygienes[myobj.hygiene]}}</th>
                                         </tr>
-                                        <!--<tr>-->
-                                        <!--    <td>Age: </td>-->
-                                        <!--    <th>{{myobj.age}}</th>-->
-                                        <!--</tr>-->
-                                        <!--<tr>-->
-                                        <!--    <td>Level: </td>-->
-                                        <!--    <th>{{myobj.level}}</th>-->
-                                        <!--</tr>-->
                                         <tr>
                                             <td>Attack: </td>
                                             <th>{{attacks[myobj.attack]}}</th>
@@ -106,28 +99,29 @@
                                 </div>
                                 <!-- sprite panel -->
                                 <div class="col">
-                                    <div id="sprite-div" class="border border-danger">
-                                        <img ng-src="resources/sprites/Tamagachi-Sprite-{{myobj.imageURL}}.jpg" alt="your Kuchipatchi pet">
+                                    <div id="sprite-div">
+                                        <img ng-src="resources/sprites/Tamagachi-Sprite-{{myobj.imageURL}}.jpg" alt="your {{myobj.species}} pet">
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <!-- action buttons -->
-                        <div id="button-div">
-                            <button class="btn btn-primary" type="button" ng-click="tickle(tamagotchi)">Tickle</button>
-                            <button class="btn btn-primary" type="button" ng-click="walk(tamagotchi)">Walk</button>
-                            <button class="btn btn-primary" type="button" ng-click="play(tamagotchi)">Play</button>
+                        <br>
+                        <div class="row" id="button-div">
+                            <div class="col"></div>
+                            <div class="col=md-6">
+                                <button class="btn btn-primary" type="button" ng-click="tickle(myobj)">Tickle</button>
+                                <button class="btn btn-primary" type="button" ng-click="walk(myobj)">Walk</button>
+                                <button class="btn btn-primary" type="button" ng-click="play(myobj)">Play</button>
+                                <button class="btn btn-primary" type="button" ng-click="bathe(myobj)">Bathe</button>
+                            </div>
+                            <div class="col"></div>
                         </div>
+                        <br>
                     </div>
                     <!-- right log div -->
-                    <div class="col border border-danger">
-                        <div id="log-sidebar" class="border border-danger">
-                            <h4><strong>Log</strong></h4>
-                            James ate a hamburger
-                            <br>James mood has fallen to discontent
-                            <br>James is now 3 days old
-                            <br>James found an item!
-                        </div>
+                    <div class="col">
+                        <instructions></instructions>
                     </div>
                 </div>
 

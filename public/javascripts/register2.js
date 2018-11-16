@@ -32,34 +32,40 @@ function registerCtrl($scope, $http) {
                     else {
                         console.log("Registering a new user");
                         $scope.currentTamagotchi = {};
+                        var min = 40;
+                        var max = 68;
+                        min = Math.ceil(min);
+                        max = Math.floor(max);
+                        var png = Math.floor(Math.random() * (max - min + 1)) + min;
+
                         //$scope.addPet = function() {
-                            var newPet = {
-                                username: currUsername,
-                                money: 500,
-                                petName: currPetName,
-                                species: "Lovelitchi",
-                                imageURL: 0,
-                                currentHealth: 12,
-                                maxHealth: 15,
-                                happiness: 4,
-                                hunger: 5,
-                                hygiene: 5,
-                                age: "1 day",
-                                level: 1,
-                                attack: 1,
-                                defense: 1,
-                                speed: 1,
-                                intelligence: 1,
-                                inventory: []
-                            };
-                            $http.post('/tamagotchi', newPet).success(function(data) {
-                                console.log("attempting http.post");
-                                $scope.currentTamagotchi = data;
-                                console.log("posted a new user");
-                                alert("Completed registration. Redirecting to login page");
-                                window.location.replace("/");
-                            });
-                            
+                        var newPet = {
+                            username: currUsername,
+                            money: 500,
+                            petName: currPetName,
+                            species: "Lovelitchi",
+                            imageURL: png,
+                            currentHealth: 12,
+                            maxHealth: 15,
+                            happiness: 4,
+                            hunger: 5,
+                            hygiene: 5,
+                            age: "1 day",
+                            level: 1,
+                            attack: 1,
+                            defense: 1,
+                            speed: 1,
+                            intelligence: 1,
+                            inventory: [4, 5, 6]
+                        };
+                        $http.post('/tamagotchi', newPet).success(function(data) {
+                            console.log("attempting http.post");
+                            $scope.currentTamagotchi = data;
+                            console.log("posted a new user");
+                            alert("Completed registration. Redirecting to login page");
+                            window.location.replace("/");
+                        });
+
                         //};
                     }
                 }
