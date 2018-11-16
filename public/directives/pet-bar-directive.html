@@ -1,0 +1,29 @@
+<div id="pet-sidebar" class="border border-danger">
+    <h4><strong>James</strong></h4>
+    <img ng-src="resources/sprites/Tamagachi-Sprite-{{myobj.imageURL}}.jpg" alt="your {{myobj.species}} pet">
+    <br>
+    <hr>
+    <table style="width:100%">
+        <tr>
+            <td>Species: </td>
+            <th>{{myobj.species}}</th>
+        </tr>
+        <tr>
+            <td>Health: </td>
+            <th>{{myobj.currentHealth}} / {{myobj.maxHealth}}</th>
+        </tr>
+        <tr>
+            <td>Mood: </td>
+            <th>{{moods[myobj.happiness]}}</th>
+        </tr>
+        <tr>
+            <td>Hygiene: </td>
+            <th>{{hygienes[myobj.hygiene]}}</th>
+        </tr>
+        <tr>
+            <td>Hunger: </td>
+            <th>{{hungers[myobj.hunger]}}</th>
+        </tr>
+    </table>
+    <br>
+</div>

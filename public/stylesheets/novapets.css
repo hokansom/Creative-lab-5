@@ -1,0 +1,85 @@
+body {
+    background-color: gray;
+}
+
+#center-div {
+    background-color: white;
+}
+
+.inventory {
+    display: flex;
+    border: 1px solid red;
+}
+
+.inventory-item {
+    padding: 15px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid blue;
+}
+
+.left-span {
+    text-align: right;
+    width: 50%;
+}
+
+#log-sidebar {
+    background-color: white;
+    margin-top: 1vw;
+    margin-bottom: 1vw;
+}
+
+#log-sidebar h4 {
+    background-color: red;
+    color: white;
+    text-align: left;
+    padding: 3px;
+    padding-left: 6px;
+}
+
+#main-content {
+    background-color: lightgray;
+}
+
+#pet-div img {
+    /*border: solid black 1px;*/
+    margin-left: 20%;
+    margin-top: 20%;
+    margin-bottom: 20%;
+    /*margin-right: 20%;*/
+    width: 60%;
+}
+
+#pet-sidebar {
+    text-align: center;
+    background-color: white;
+    margin-top: 1vw;
+    margin-bottom: 1vw;
+}
+
+#pet-sidebar h4 {
+    background-color: red;
+    color: white;
+    text-align: left;
+    padding: 3px;
+    padding-left: 6px;
+}
+
+#pet-sidebar img {
+    width: 60%;
+    border: black solid 1px;
+}
+
+td {
+    text-align: right;
+}
+
+th {
+    text-align: left;
+}
+
+#user-info {
+    color: white;
+    text-align: center;
+}
